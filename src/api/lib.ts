@@ -91,7 +91,7 @@ export const generatePdf = async (
   const columnWidth = pageWidth / columnsPerPage;
   const rowHeight = pageHeight / rowsPerPage;
 
-  const pdf = new JsPDF();
+  const pdf = new JsPDF({format: [pageWidth, pageHeight]});
 
   // Split cards into pages
   for (const [page, pageCards] of chunk(cards, cardsPerPage).entries()) {
